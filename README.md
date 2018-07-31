@@ -20,9 +20,9 @@ However, since every API call is always made in Sagas you end up storing the res
 
 ## Why not do things the traditional way ...
 During the days of rich/thick client application, on the on-click event we make a function call to process some business logic (Let's name the group: services). Service functions are responsible to massage your data, do merging and filtering, anything related to business process, including making database calls.
-For example,
-	 * Get list of clients and accounts from server.
-	 * Filter, sort, then merge data into a single data structure.
+For example:
+* Get list of clients and accounts from server.
+* Filter, sort, then merge data into a single data structure.
 
 Service function is not aware of React, it just knows business logic and invoking API calls (API call implementation will be done by other class).
 
@@ -104,3 +104,12 @@ With plain Service functions, your service function can invoke other service fun
 
 ## Redux Saga has cool features like cancelling API calls, plain Service function does not have it?
 But do you need it. We once implemented a search-as-you-type component using Redux Saga and discovered the search for keyword 'Book' is never made to API call because Saga is configured to limit one API call at a time and it is currently searching for keyword 'Bo'.  
+
+
+## Why do you even bother with Rich/Thick client application?
+From Rich/Thick client application like Swing and Visual Basic we learned MVC (Model View Controller) concept and apply it to server pages.
+Back when application was buggy because developers overused JSP and HTTP session, from MVC concept Apache Struts was conceived.
+Overusing Redux store exhibits similar behaviour to overusing HTTP session.
+
+Do not use/overuse something simply because it is cool or popular.
+EJB (specifically EJB2) was considered cool until Spring Framework introduced.
