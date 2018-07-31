@@ -1,0 +1,67 @@
+.search-frame {
+	border: solid 1px green;
+	margin: 10px;
+	padding: 5px;
+}
+
+.calc-frame {
+	position: fixed;
+	top: 100px;
+	left: 100px;
+	width: 1000px;
+	height: 300px;
+	z-index: 100;
+	background-color: white;
+}
+
+.calc-frame.hide {
+	display: none;
+}
+
+.calc-frame-overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 50;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.calc-frame-overlay.hide {
+	display: none;
+}
+
+.nav-bar {
+	height: 50px;
+}
+
+.nav {
+	float: left;
+	display: block;
+	padding: 10px 20px 10px 20px;
+	border: solid 1px black;
+}
+
+.frame {
+	border: solid 1px green;
+	text-align: left;
+	padding: 10px;
+}
+
+.entry {
+	border: solid 1px blue;
+	margin: 10px;
+	cursor: pointer;
+}
+
+.entry:hover {
+	background-color: rgba(0, 0, 255, .2)
+}
+
+button {
+	background-color: green;
+	color: white;
+	font-size: 15px;
+	min-width: 80px;
+}
