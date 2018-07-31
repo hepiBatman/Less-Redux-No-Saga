@@ -30,23 +30,23 @@ Doing this you can store your state/data into local state (unless more than a mo
 * When the component is not in-scope (unmounted) you need not worry to reset junk data, it will just disappear.
 * Your business logic will not be split between Reducers and Sagas (In case of chain reactions Saga to another Saga).
 
-  ```javascript
-  onClick() {
-    const result = calculatorServices.calc(op1, op2);
-  
-    // do more work ... eg. store to local state
-  }
+	```javascript
+	onClick() {
+	  const result = calculatorServices.calc(op1, op2);
+	  
+	  // do more work ... eg. store to local state
+	}
 
-calculatorServices:
-  calc = async (op1, op2) {
-    const rate = await api.getRate(op1); //api can be a promise to Ajax call/s
-    const result = op1 * op2 * rate;
-    
-    // If your business logic requires it, you can also call other service functions, eg. to get discount.
-    // Next developer just need to look at this function to get overall picture of business process
-    
-    return result;
-  }
+	calculatorServices:
+	  calc = async (op1, op2) {
+	    const rate = await api.getRate(op1); //api can be a promise to Ajax call/s
+	    const result = op1 * op2 * rate;
+	    
+	    // If your business logic requires it, you can also call other service functions, eg. to get discount.
+	    // Next developer just need to look at this function to get overall picture of business process
+	    
+	    return result;
+	  }
 
 Download the code to see it in action.
 
