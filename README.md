@@ -53,7 +53,7 @@ Download the code to see it in action.
 
 ## What if I need to pass properties to deep-down children?
 If you can not pass it down naturally using markups, have you considered React.Context?
-With plain old state, useContext without other hooks (useState, useEffect, etc).
+With plain old state and useContext without other hooks (useState, useEffect, etc).
 
 
 ## When do we use Redux?
