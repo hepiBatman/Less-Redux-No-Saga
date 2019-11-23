@@ -26,6 +26,11 @@ For example:
 
 Service function is not aware of React, it just knows business logic and invoking API calls (API call implementation will be done by other class).
 
+In general, there are several types of state: 
+* **Global state** Using Redux in this case is a good idea.
+* **Contextual state** This state is only relevant within the particular module, eg. Customer, Resourcing, Admin, Inventory, etc. When user moves to another module the state should be out-of-scope and destroyed. Storing this to a parent component of the module is a good idea. You can however over-engineer it by treating it as global state. You will be responsible to clear the state and fixing bugs related to dirty data creeping to your view. 
+* **Local state** This state is only relevant to your particular component, eg. is your dropdown list open or closed, showing extra view on hover.
+
 Doing this you can store your state/data into local state (unless more than a module requires it), your code will be simpler because:
 * When the component is not in-scope (unmounted) you need not worry to reset junk data, it will just disappear.
 * Your business logic will not be split between Reducers and Sagas (In case of chain reactions Saga to another Saga).
@@ -72,6 +77,7 @@ Your Redux will be simpler if you treat the Redux store like RDMS database table
   	  }
   	}
   	
+* Traditionally you have a parent common to both components. When you start your project, you usually identify your modules: Payment, Customer, Admin, etc. Each module will have its parent. If you ever need to pass data from one module to another, chances are the data is a global data which should reside on application level.
 * If you do not redirect to another URI, you can consider using publish-subscribe.
 
   ```javascript
